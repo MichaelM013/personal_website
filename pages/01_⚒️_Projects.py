@@ -2,11 +2,13 @@ from pathlib import Path
 import streamlit as st 
 
 
-# --- PATH SETTINGS ---
+# Define the current directory
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-css_file = Path(r"C:\Users\Micha\OneDrive\Projects\digital_cv\styles\main.css")
-depot_analysis_file = Path(r"C:\Users\Micha\OneDrive\Projects\digital_cv\assets\depot_incident_analysis.pdf")
-excel_analysis_file = Path(r"C:\Users\Micha\OneDrive\Projects\digital_cv\assets\excel_sales_analysis.pdf")
+
+# Use relative paths to the files
+css_file = current_dir.parent / 'styles' / 'main.css'
+depot_analysis_file = current_dir.parent / 'assets' / 'depot_incident_analysis.pdf'
+excel_analysis_file = current_dir.parent / 'assets' / 'excel_sales_analysis.pdf'
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Projects | Michael Moore"
 PAGE_ICON = "📚"
