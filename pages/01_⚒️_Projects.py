@@ -28,15 +28,26 @@ st.write("---")
 
 
 # --- Depot Incident Analysis ---
-st.subheader("1. 🛤️ Depot Incident Analysis")
+st.subheader("1. 🛤️ Depot Incident Analysis (Python)")
 st.download_button(
         label="Report: Depot Incident Analysis",
         data=PDFbyte,
         file_name=depot_analysis_file.name,
         mime="application/octet-stream",
     )
-st.write("This project involved analysing depot safety incident data from RSSB’s Safety Management Intelligence System (SMIS) using Python (pandas, numpy, matplotlib, scipy). The analysis applied the Fatalities and Weighted Injuries (FWI) Index to assess incident severity and identify patterns in workforce harm. By leveraging statistical methods and data visualisation, actionable insights were presented, contributing to the development of a new industry Standard aimed at improving safety protocols.")
+#st.write("This project involved analysing depot safety incident data from RSSB’s Safety Management Intelligence System (SMIS) using Python (pandas, numpy, matplotlib, scipy). The analysis applied the Fatalities and Weighted Injuries (FWI) Index to assess incident severity and identify patterns in workforce harm. By leveraging statistical methods and data visualisation, actionable insights were presented, contributing to the development of a new industry Standard aimed at improving safety protocols.")
 
+# --------------- Applying justified text to improve readability
+justified_text1 = """
+<p style="text-align: justify;">
+This project involved analysing depot safety incident data from RSSB’s Safety Management Intelligence System (SMIS) using Python (pandas, numpy, matplotlib, scipy). 
+The analysis applied the Fatalities and Weighted Injuries (FWI) Index to assess incident severity and identify patterns in workforce harm. 
+By leveraging statistical methods and data visualisation, actionable insights were presented, contributing to the development of a new industry Standard aimed at improving safety protocols.
+</p>
+"""
+
+st.markdown(justified_text1, unsafe_allow_html=True)
+#####
 st.markdown(f"<u><a href='https://github.com/MichaelM013/Depot-Exploratory-Analysis'>View Project Repository</a></u>", unsafe_allow_html=True)
 
 
@@ -47,13 +58,25 @@ st.write('\n')
 with open(excel_analysis_file, "rb") as pdf_file:
     ExcelPDFbyte = pdf_file.read()
 
-st.subheader("2. 📊 Microsoft Excel Exploratory Analysis")
+st.subheader("2. 📊 Sales Exploratory Analysis (Excel)")
 st.download_button(
-        label="Report: Microsoft Excel Exploratory Analysis",
+        label="Report: Sales Exploratory Analysis",
         data=ExcelPDFbyte,
         file_name=excel_analysis_file.name,
         mime="application/octet-stream",
     )
-st.write("This project analyses a synthetic sales dataset spanning 2022 to 2024, focusing on transactions from 2023 to 2024. Using Microsoft Excel, including Pivot Tables, Charts, and formulas, the analysis identifies key patterns and insights. The main objectives were to evaluate sales rep performance, regional revenue differences, product category performance, the impact of discounts, and the profitability of online vs retail channels. The project showcases data cleaning, exploratory analysis, and the generation of actionable business insights.")
+#st.write("This project analyses a synthetic sales dataset spanning 2022 to 2024, focusing on transactions from 2023 to 2024. Using Microsoft Excel, including Pivot Tables, Charts, and formulas, the analysis identifies key patterns and insights. The main objectives were to evaluate sales rep performance, regional revenue differences, product category performance, the impact of discounts, and the profitability of online vs retail channels. The project showcases data cleaning, exploratory analysis, and the generation of actionable business insights.")
 
+# --------------- Applying justified text to improve readability
+justified_text2 = """
+<p style="text-align: justify;">
+This project analyses a synthetic sales dataset spanning 2022 to 2024, focusing on transactions from 2023 to 2024. 
+Using Microsoft Excel, including Pivot Tables, Charts, and formulas, the analysis identifies key patterns and insights. 
+The main objectives were to evaluate sales rep performance, regional revenue differences, product category performance, the impact of discounts, and the profitability of online vs retail channels. 
+The project showcases data cleaning, exploratory analysis, and the generation of actionable business insights.
+</p>
+"""
+
+st.markdown(justified_text2, unsafe_allow_html=True)
+#
 st.markdown(f"<u><a href='https://github.com/MichaelM013/excel_analysis_synthetic_sales'>View Project Repository</a></u>", unsafe_allow_html=True)  
