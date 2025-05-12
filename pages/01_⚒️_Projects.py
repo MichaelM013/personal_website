@@ -46,7 +46,7 @@ This project involved developing an interactive dashboard in Power BI to analyse
 
 st.markdown(justified_text1, unsafe_allow_html=True)
 #####
-st.markdown(f"<u><a href='https://github.com/MichaelM013/Depot-Exploratory-Analysis'>View Project Repository</a></u>", unsafe_allow_html=True)
+st.markdown(f"<u><a href='https://github.com/MichaelM013/performance_sales_dashboard'>View Project Repository</a></u>", unsafe_allow_html=True)
 
 
 st.write('\n')
