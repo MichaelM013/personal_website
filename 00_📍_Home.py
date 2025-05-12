@@ -15,7 +15,7 @@ profile_pic = current_dir / "assets" / "mm_logo.png"
 PAGE_TITLE = "Profile | Michael Moore"
 PAGE_ICON = "👋🏿"
 NAME = "Hi! My name is Michael Moore 👋🏿"
-EMAIL = "michaeloymoore@outlook.com"
+EMAIL = "michaeloymoore@gmail.com"
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
 # --- LOAD ASSETS ---
