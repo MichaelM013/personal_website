@@ -9,7 +9,8 @@ current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir.parent / 'styles' / 'main.css'
 depot_analysis_file = current_dir.parent / 'assets' / 'depot_incident_analysis.pdf'
 excel_analysis_file = current_dir.parent / 'assets' / 'excel_sales_analysis.pdf'
-powerbi_dashboard_file = current_dir.parent / 'assets' / 'sales_performance_dashboard.pdf'
+powerbi_report_file = current_dir.parent / 'assets' / 'sales_performance_dashboard.pdf'
+powerbi_dashboard_file = current_dir.parent / 'assets' / 'superstore_performance_dashboard_1.pbix'
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Projects | Michael Moore"
 PAGE_ICON = "📚"
@@ -20,8 +21,12 @@ st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 # --- LOAD ASSETS ---
 with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
-with open(powerbi_dashboard_file, "rb") as pdf_file:
+
+with open(powerbi_report_file, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
+
+with open(powerbi_dashboard_file, "rb") as pbix_file:
+    PBIXbyte = pbix_file.read()
 
 # --- Projects & Accomplishments ---
 st.header("Projects 🛠️")
@@ -29,11 +34,23 @@ st.write("---")
 
 # --- Power BI Dashboard ---
 st.subheader("1. 🛒 Sales Performance Dashboard (Power BI)")
-st.download_button(
-        label="Report: Sales Performance Dashboard",
+# Create two columns for side-by-side buttons
+col1, col2 = st.columns([1, 1])  # Equal width
+
+with col1:
+    st.download_button(
+        label="📄 Report: Sales Performance Dashboard",
         data=PDFbyte,
+        file_name=powerbi_report_file.name,
+        mime="application/octet-stream"
+    )
+
+with col2:
+    st.download_button(
+        label="📊 Download Power BI Dashboard File",
+        data=PBIXbyte,
         file_name=powerbi_dashboard_file.name,
-        mime="application/octet-stream",
+        mime="application/octet-stream"
     )
 #st.write("This project involved analysing depot safety incident data from RSSB’s Safety Management Intelligence System (SMIS) using Python (pandas, numpy, matplotlib, scipy). The analysis applied the Fatalities and Weighted Injuries (FWI) Index to assess incident severity and identify patterns in workforce harm. By leveraging statistical methods and data visualisation, actionable insights were presented, contributing to the development of a new industry Standard aimed at improving safety protocols.")
 
@@ -58,7 +75,7 @@ with open(depot_analysis_file, "rb") as pdf_file:
 # --- Depot Incident Analysis ---
 st.subheader("2. 🛤️ Depot Incident Analysis (Python)")
 st.download_button(
-        label="Report: Depot Incident Analysis",
+        label="📄 Report: Depot Incident Analysis",
         data=PythonPDFbyte,
         file_name=depot_analysis_file.name,
         mime="application/octet-stream",
@@ -88,7 +105,7 @@ with open(excel_analysis_file, "rb") as pdf_file:
 
 st.subheader("3. 📊 Sales Exploratory Analysis (Excel)")
 st.download_button(
-        label="Report: Sales Exploratory Analysis",
+        label="📄 Report: Sales Exploratory Analysis",
         data=ExcelPDFbyte,
         file_name=excel_analysis_file.name,
         mime="application/octet-stream",
