@@ -10,7 +10,7 @@ css_file = current_dir.parent / 'styles' / 'main.css'
 depot_analysis_file = current_dir.parent / 'assets' / 'depot_incident_analysis.pdf'
 excel_analysis_file = current_dir.parent / 'assets' / 'excel_sales_analysis.pdf'
 powerbi_report_file = current_dir.parent / 'assets' / 'sales_performance_dashboard.pdf'
-powerbi_dashboard_file = current_dir.parent / 'assets' / 'superstore_performance_dashboard_1.pbix'
+powerbi_dashboard_file = current_dir.parent / 'assets' / 'Superstore_Dashboard_1.pbix'
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Projects | Michael Moore"
 PAGE_ICON = "📚"
